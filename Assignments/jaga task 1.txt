@@ -1,0 +1,226 @@
+                                               TEST 1
+
+
+
+
+1)Create one superclass HillStations and three subclasses Manali, Mussoorie,Gullmarg. Subclasses extend the superclass and override its location() and famousFor() method. i.call the location() and famousFor() method by the Parent class’, i.e. Hillstations class. As it refers to the base class object and the
+base class method overrides the superclass method; the base class method is invoked at runtime. ii.call the location() and famousFor() method by the all sub class’,and print accordingly.
+
+
+PROGRAM:
+
+
+
+
+
+
+class HillStations {
+    String location() {
+        return "Located in the mountains.";
+    }
+
+
+    String famousFor() {
+        return "Famous for its scenic beauty.";
+    }
+}
+
+
+class Manali extends HillStations {
+    @Override
+    String location() {
+        return "Manali is situated in Himachal Pradesh, India.";
+    }
+
+
+    @Override
+    String famousFor() {
+        return "Manali is famous for its adventure sports and picturesque landscapes.";
+    }
+}
+
+
+class Mussoorie extends HillStations {
+    @Override
+    String location() {
+        return "Mussoorie is located in Uttarakhand, India.";
+    }
+
+
+    @Override
+    String famousFor() {
+        return "Mussoorie is famous for its colonial charm and stunning views.";
+    }
+}
+
+
+class Gulmarg extends HillStations {
+    @Override
+    String location() {
+        return "Gulmarg is situated in Jammu and Kashmir, India.";
+    }
+
+
+    @Override
+    String famousFor() {
+        return "Gulmarg is famous for its ski resorts and snow-capped peaks.";
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        // Calling methods using superclass reference
+        HillStations hillstation = new HillStations();
+        System.out.println("Calling methods using superclass reference:");
+        System.out.println(hillstation.location());
+        System.out.println(hillstation.famousFor());
+
+
+        System.out.println();
+
+
+        // Calling methods using subclass references
+        Manali manali = new Manali();
+        Mussoorie mussoorie = new Mussoorie();
+        Gulmarg gulmarg = new Gulmarg();
+
+
+        System.out.println("Calling methods using subclass references:");
+        System.out.println(manali.location());
+        System.out.println(manali.famousFor());
+        System.out.println();
+        System.out.println(mussoorie.location());
+        System.out.println(mussoorie.famousFor());
+        System.out.println();
+        System.out.println(gulmarg.location());
+        System.out.println(gulmarg.famousFor());
+    }
+}
+
+
+
+
+
+OUTPUT
+
+
+Calling methods using superclass reference:
+Located in the mountains.
+Famous for its scenic beauty.
+
+
+
+
+Calling methods using subclass references:
+Manali is situated in Himachal Pradesh, India.
+Manali is famous for its adventure sports and picturesque landscapes.
+
+
+
+
+Mussoorie is located in Uttarakhand, India.
+Mussoorie is famous for its colonial charm and stunning views.
+
+
+
+
+Gulmarg is situated in Jammu and Kashmir, India.
+Gulmarg is famous for its ski resorts and snow-capped peaks.
+
+
+
+
+
+
+2)Write a Java program that demonstrates method overriding by creating a superclass called Animal and two subclasses called Dog and Cat. ● The Animal class should have a method called makeSound(), which simply prints "The animal makes a sound." ● The Dog and Cat classes should override this method to print "TheCat/The dog meows/barks" respectively. ● The program
+should allow the user to create and display objects of each class.
+
+
+PROGRAM:
+
+
+class Animal {
+    public void makeSound() {
+        System.out.println("The animal makes a sound.");
+    }
+}
+
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("The dog barks.");
+    }
+}
+
+
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("The cat meows.");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Animal genericAnimal = new Animal();
+        genericAnimal.makeSound();
+
+
+        Dog myDog = new Dog();
+        myDog.makeSound();
+
+
+        Cat myCat = new Cat();
+        myCat.makeSound();
+    }
+}
+
+
+
+
+OUTPUT:
+The animal makes a sound.
+The dog barks.
+The cat meows.
+
+
+
+
+
+
+3). You need to find and print all the unique characters in a given string.input string: java.
+
+
+
+
+PROGRAM:
+
+
+import java.util.HashSet;
+public class UniqueCharactersFinder {
+ public static void main(String[] args) {
+ String input = "java";
+ String uniqueChars = findUniqueCharacters(input);
+ System.out.println("Unique characters in the input string: " + uniqueChars);
+ }
+ public static String findUniqueCharacters(String str) {
+ HashSet<Character> uniqueSet = new HashSet<>();
+ StringBuilder result = new StringBuilder();
+ for (char ch : str.toCharArray()) {
+ if (!uniqueSet.contains(ch)) {
+ uniqueSet.add(ch);
+ result.append(ch);
+ }
+ }
+ return result.toString();
+ }
+}
+
+
+
+
+OUTPUT:
+Unique characters in the input string: jv
